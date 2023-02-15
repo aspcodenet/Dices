@@ -28,20 +28,28 @@ namespace Dices
         public void Run()
         {
             var random = new Random();
-            var tal1 = random.Next(1, 7);
-            var tal2 = random.Next(1, 7);
+            while (true)
+            {
+                var tal1 = random.Next(1, 7);
+                var tal2 = random.Next(1, 7);
 
-            if (tal1 == tal2)
-            {
-                var twoOfSame = GetTwoOfSameString(tal1);
-                Console.WriteLine($"Du fick två {twoOfSame}");
-            }
-            else
-            {
-                var first = GetOneOf(tal1);
-                var second = GetOneOf(tal2);
-                
-                Console.WriteLine($"Du fick en  {first} och en {second}");
+                if (tal1 == tal2)
+                {
+                    var twoOfSame = GetTwoOfSameString(tal1);
+                    Console.WriteLine($"Du fick två {twoOfSame}");
+                }
+                else
+                {
+                    var first = GetOneOf(tal1);
+                    var second = GetOneOf(tal2);
+
+                    Console.WriteLine($"Du fick en  {first} och en {second}");
+                }
+
+                Console.Write("Vill du fortsätta J/N:");
+                var s = Console.ReadLine();
+                if (s == "N")
+                    break;
             }
 
         }
