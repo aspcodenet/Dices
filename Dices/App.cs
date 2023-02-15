@@ -34,14 +34,37 @@ namespace Dices
             if (tal1 == tal2)
             {
                 var twoOfSame = GetTwoOfSameString(tal1);
-
                 Console.WriteLine($"Du fick två {twoOfSame}");
             }
             else
             {
-
+                var first = GetOneOf(tal1);
+                var second = GetOneOf(tal2);
+                
+                Console.WriteLine($"Du fick en  {first} och en {second}");
             }
 
+        }
+
+        public string GetOneOf(int tal1)
+        {
+            switch (tal1)
+            {
+                case 1:
+                    return "etta";
+                case 2:
+                    return "tvåa";
+                case 3:
+                    return "trea";
+                case 4:
+                    return "fyra";
+                case 5:
+                    return "femma";
+                case 6:
+                    return "sexa";
+                default:
+                    return null;
+            }
         }
     }
 }
